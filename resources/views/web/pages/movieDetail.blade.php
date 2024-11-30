@@ -169,26 +169,45 @@
             </div>
         @endif
         <div class="col-12 mt-4">
-            <h4>@lang('lang.movie_schedule')</h4>
-            <ul class="list-group list-group-horizontal flex-wrap">
-                @for($i = 0; $i <= 7; $i++)
-                    <li class="list-group-item border-0">
-                        <button data-bs-toggle="collapse"
-                                data-bs-target="#schedule_date_{{$i}}"
-                                aria-expanded="false"
-                                class="btn btn-block btn-outline-dark p-2 m-2">
-                            {{ date('d/m', strtotime('+ '.$i.' day', strtotime(today()))) }}
-                        </button>
-                    </li>
-                @endfor
-            </ul>
-        </div>
-        @include('web.layout.movieDetailSchedules')
-        </div>
+    <h4>@lang('lang.movie_schedule')</h4>
+    <ul class="list-group list-group-horizontal flex-wrap">
+        @for($i = 0; $i <= 23; $i++)
+            <li class="list-group-item border-0">
+                <button onclick="highlightButton(this)"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#schedule_date_{{$i}}"
+                        aria-expanded="false"
+                        class="btn btn-block btn-outline-dark p-2 m-2">
+                    {{ date('d/m', strtotime('+ '.$i.' day', strtotime(today()))) }}
+                </button>
+            </li>
+        @endfor
+    </ul>
+</div>
+@include('web.layout.movieDetailSchedules')
+</div>
 
-
-
-    </section>
+</section>
 @endsection
 @section('js')
+<script>
+    function highlightButton(button) {
+        // Xóa class 'active' khỏi tất cả nút
+        var buttons = document.querySelectorAll('.btn');
+        buttons.forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        // Thêm class 'active' cho nút được nhấn
+        button.classList.add('active');
+    }
+</script>
+
+<style>
+    .active {
+        background-color: #007bff; /* Thay đổi màu nền khi nút được nhấn */
+        color: white; /* Thay đổi màu chữ */
+    }
+</style>
 @endsection
+

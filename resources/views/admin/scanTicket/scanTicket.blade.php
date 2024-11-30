@@ -89,6 +89,7 @@
         window.onload = async () => {
             this.resizeContent();
 
+            const muLicenseKey = "";
             scanbotSDK = await ScanbotSDK.initialize({ licenseKey: Config.license() });
 
             $("#barcode-scanner-button").on('click', async (e) => {

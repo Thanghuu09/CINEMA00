@@ -1,7 +1,7 @@
 <div class="mt-2">
     <div class="d-flex flex-column mt-2 mb-5" id="schedulesMain">
 
-        @for($i = 0; $i <= 7; $i++)
+        @for($i = 0; $i <= 23; $i++)
             <div class="collapse collapse-horizontal @if($i == 0) show @endif" id="schedule_date_{{$i}}"
                  data-bs-parent="#schedulesMain">
                 @foreach($theaters as $theater)

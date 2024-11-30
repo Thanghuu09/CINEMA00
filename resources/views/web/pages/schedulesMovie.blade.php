@@ -128,7 +128,7 @@
                                 </div>
                             </div>
                             <ul class="list-group list-group-horizontal flex-wrap listDate">
-                                @for($i = 0; $i <= 7; $i++)
+                                @for($i = 0; $i <= 23; $i++)
                                     <li class="list-group-item border-0">
                                         <button data-bs-toggle="collapse"
                                                 data-bs-target="#schedule_{{$movie->id}}_date_{{$i}}"

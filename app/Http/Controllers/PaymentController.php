@@ -23,9 +23,8 @@ class PaymentController extends Controller
 
     public function create(Request $request)
     {
-        $ticket = Ticket::find($request->ticket_id);
-        $vnp_TmnCode = "6JQZ09G6"; //Mã định danh merchant kết nối (Terminal Id)
-        $vnp_HashSecret = "QCTWPIWUGYNUJNXJAJMQKHUBCXZMDZXU"; //Secret key
+        $vnp_TmnCode = "4XLUJC03"; //Mã định danh merchant kết nối (Terminal Id)
+        $vnp_HashSecret = "2FIU4155I4UV6F27MBBXN0YZ2HTF3LKK"; //Secret key
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
         $vnp_Returnurl = $request->getSchemeAndHttpHost() . "/payment/result?point=" . $request->point . '&hasDiscount=' . $request->hasDiscount;
         $vnp_apiUrl = "http://sandbox.vnpayment.vn/merchant_webapi/merchant.html";

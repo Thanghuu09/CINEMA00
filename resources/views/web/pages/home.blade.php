@@ -198,13 +198,13 @@
                 <a href="/news" class="btn btn-outline-warning w-auto">@lang('lang.more') ></a>
             </div>
             @endif
-            <div class="zalo-chat-widget"
+            <!-- <div class="zalo-chat-widget"
             data-oaid="1173207040606408830"
             data-welcome-message="Xin chào! Rạp chiếu phim TQ rất hân hạnh được hỗ trợ bạn."
             data-autopopup="0"
             data-width=""
             data-height="">
-            </div>
+            </div> -->
 
         </div>
 

@@ -1,6 +1,6 @@
 <div class="collapse @if($loop->first) show @endif" id="TheaterSchedules_{{$theater->id}}" data-bs-parent="#theaterSchedulesParent">
     <ul class="list-group list-group-horizontal flex-wrap mt-4 listDate">
-        @for($i = 0; $i <= 7; $i++)
+        @for($i = 0; $i <= 23; $i++)
             <li class="list-group-item border-0">
                 <button data-bs-toggle="collapse"
                         data-bs-target="#schedule_{{$theater->id}}_date_{{$i}}"
@@ -19,7 +19,7 @@
         <h4>Lịch chiếu phim</h4>
         <div>
             <div class="d-block mt-2 mb-5"  id="schedulesMain_{{$theater->id}}">
-                @for($i = 0; $i <= 7; $i++)
+                @for($i = 0; $i <= 23; $i++)
                     <div class="collapse collapse-horizontal @if($i == 0) show @endif" id="schedule_{{$theater->id}}_date_{{$i}}"
                          data-bs-parent="#schedulesMain_{{$theater->id}}">
                         @foreach($movies as $movie)

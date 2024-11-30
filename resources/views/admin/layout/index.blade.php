@@ -113,7 +113,7 @@
 
     {{-- ScanbotSDK --}}
 
-    <script src="https://cdn.jsdelivr.net/npm/scanbot-web-sdk@latest/bundle/ScanbotSDK.min.js"></script>
+    <script src="admin_assets/scanbotSDK/wasm/ScanbotSDK.min.js"></script>
     <!-- After, initialize the Scanbot SDK in your own script -->
 
     <script src="admin_assets/scanbotSDK/js/lib/toastify.js"></script>
@@ -201,7 +201,7 @@
         //     });
         // }
 
-        // writeUserData('2', 'ssMinh', 'minh@gmail.com', 'huungu');
+        // writeUserData('2', 'ssThang', 'thang@gmail.com', 'thangngu');
         // const element = document.getElementById("test");
         // const starCountRef = ref(db, 'users/' + 2 );
         // onValue(starCountRef, (snapshot) => {
