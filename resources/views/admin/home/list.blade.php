@@ -190,7 +190,7 @@
                             }],
                             xkey: 'date',
                             ykeys: ['1', '2', '3'],
-                            labels: ['Rạp Cao Lỗ', 'Rạp Hồ Gươm', 'Rạp VinCom Đà Nẵng']
+                            labels: ['CGV Vincom Xuân Khánh', 'CGV Vincom Center Bà Triệu', 'Rạp VinCom Đà Nẵng']
                         });
                         if (data['success']) {
                             chart.setData(data.chart_data);

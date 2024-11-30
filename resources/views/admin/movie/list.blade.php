@@ -81,14 +81,14 @@
                                             <i class="fa-solid fa-pen-to-square fa-lg"></i>
                                         </a>
                                     </td>
-                                    <!-- {{-- <td class="align-middle">--}}
-                                    {{-- <a href="javascript:;" data-url="{{ url('admin/movie/delete', $movie['id'] ) }}" class="text-secondary font-weight-bold text-xs delete-movie" data-toggle="tooltip"--}}
-                                    {{-- data-original-title="Delete movie">--}}
-                                    {{-- <i class="fa-solid fa-trash-can fa-lg"></i>--}}
-                                    {{-- </a>--}}
-                                    {{-- </td>--}} -->
+                                    <td class="align-middle">
+                                        <a href="javascript:;" data-url="{{ url('admin/movie/delete', $movie['id'] ) }}" class="text-secondary font-weight-bold text-xs delete-movie" data-toggle="tooltip"
+                                           data-original-title="Delete movie">
+                                            <i class="fa-solid fa-trash-can fa-lg"></i>
+                                        </a>
+                                    </td>
                                 </tr>
-
+                                
                                 @endforeach
                             </tbody>
                         </table>
@@ -106,35 +106,36 @@
 @endcan
 @endsection
 @section('scripts')
-<!-- {{--    <script>--}}
-{{--        $(document).ready(function () {--}}
-{{--            $.ajaxSetup({--}}
-{{--                headers: {--}}
-{{--                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')--}}
-{{--                }--}}
-{{--            });--}}
-{{--            $('.delete-movie').on('click', function () {--}}
-{{--                var userURL = $(this).data('url');--}}
-{{--                var trObj = $(this);--}}
-{{--                if (confirm("Are you sure you want to remove it?") === true) {--}}
-{{--                    $.ajax({--}}
-{{--                        url: userURL,--}}
-{{--                        type: 'DELETE',--}}
-{{--                        dataType: 'json',--}}
-{{--                        success: function (data) {--}}
-{{--                            if (data['success']) {--}}
-{{--                                // alert(data.success);--}}
-{{--                                trObj.parents("tr").remove();--}}
-{{--                            } else if (data['error']) {--}}
-{{--                                alert(data.error);--}}
-{{--                            }--}}
-{{--                        }--}}
-{{--                    });--}}
-{{--                }--}}
 
-{{--            });--}}
-{{--        });--}}
-{{--    </script>--}} -->
+
+<script>
+    $(document).ready(function () {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $('.delete-movie').on('click', function () {
+            var userURL = $(this).data('url');
+            var trObj = $(this);
+            if (confirm("Are you sure you want to remove it?") === true) {
+                $.ajax({
+                    url: userURL,
+                    type: 'DELETE',
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data['success']) {
+                            // alert(data.success);
+                            trObj.parents("tr").remove();
+                        } else if (data['error']) {
+                            alert(data.error);
+                        }
+                    }
+                });
+            }
+        });
+    });
+</script>
 <script>
     $(document).ready(function() {
         $.ajaxSetup({

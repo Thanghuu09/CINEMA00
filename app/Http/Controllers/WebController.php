@@ -68,7 +68,6 @@ class WebController extends Controller
             }
         });
 
-
         return view('web.pages.home', [
             'movies' => $movies,
             'moviesEarly' => $moviesEarly,
@@ -76,6 +75,7 @@ class WebController extends Controller
             'news' => $news,
         ]);
     }
+    
 
     public function movieDetail($id, Request $request)
     {
@@ -105,6 +105,7 @@ class WebController extends Controller
             $date_cur = date('Y-m-d');
         }
         $theaters_city = Theater::where('status', 1)->where('city', $city_cur)->get();
+
         return view('web.pages.movieDetail', [
             'movie' => $movie,
             'schedulesEarly' => $schedulesEarly,

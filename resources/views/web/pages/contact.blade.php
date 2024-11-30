@@ -4,14 +4,16 @@
     active
 @endsection
 @section('css')
-    .form {
+.form {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 28px;
     background-color: #fff;
-    padding: 20px;
+    padding: 50px;
     border-radius: 10px;
     position: relative;
+    margin: 0 140px;
+    background-color: #f8f8f8
     }
 
     .message {
@@ -23,6 +25,34 @@
     display: flex;
     width: 100%;
     gap: 6px;
+    justify-content: center;
+    }
+
+    .flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+    justify-content: space-between;
+    }
+
+    .flex label {
+        flex: 1; 
+    }
+
+    .input-left {
+        text-align: left;
+    }
+
+    .input-center {
+        text-align: center;
+    }
+
+    .input-right {
+        text-align: right;
+    }
+
+    .flex .input {
+    text-align: inherit;
     }
 
     .form label {
@@ -53,8 +83,8 @@
     }
 
     .form label .input:focus + span,.form label .input:valid + span {
-    top: 30px;
-    font-size: 0.7em;
+    top: -25px;
+    font-size: 1em;
     font-weight: 600;
     }
 
@@ -86,8 +116,8 @@
     }
 
     .form label .input01:focus + span,.form label .input01:valid + span {
-    top: 50px;
-    font-size: 0.7em;
+    top: -28px;
+    font-size: 1em;
     font-weight: 600;
     }
 
@@ -200,8 +230,13 @@
     right: 0;
     width: 0;
     }
+    .lienhe{
+        text-align: center;
+    }
+
 @endsection
 @section('content')
+<h1 class=lienhe>@lang('lang.contact')</h1>
     <section class="container-lg clearfix">
         <div class="form justify-content-center">
                 <div class="flex">
@@ -212,15 +247,14 @@
                     </label>
 
                     <label>
-                        <input id="email" name="email" value="@if(Auth::check()) {{ Auth::user()->email}} @endif" type="email" class="input">
-                        <span>email</span>
+                        <input id="email" required name="email" value="@if(Auth::check()) {{ Auth::user()->email}} @endif" type="email" class="input">
+                        <span>Email</span>
                     </label>
-                </div>
-
-                <label>
-                    <input id="phone" name="phone"  value="@if(Auth::check()) {{ Auth::user()->phone }} @endif" type="tel" class="input">
-                    <span>@lang('lang.phone')</span>
+                    <label>
+                        <input id="phone" required name="phone"  value="@if(Auth::check()) {{ Auth::user()->phone }} @endif" type="tel" class="input">
+                        <span>@lang('lang.phone')</span>
                 </label>
+                </div>    
                 <label>
                     <textarea id="message" required name="message" rows="3"  class="input01 message_feedback"></textarea>
                     <span>@lang('lang.message')</span>
@@ -270,3 +304,19 @@
         });
     </script>
 @endsection
+
+@if(request()->is('contact')) 
+    <!-- Mã Tawk.to chỉ hiển thị trên trang Liên Hệ -->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/67247dd74304e3196adbab03/1ibj8n57p';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+@endif
+

@@ -23,6 +23,7 @@ class PaymentController extends Controller
 
     public function create(Request $request)
     {
+        $ticket = Ticket::find($request->ticket_id);
         $vnp_TmnCode = "4XLUJC03"; //Mã định danh merchant kết nối (Terminal Id)
         $vnp_HashSecret = "2FIU4155I4UV6F27MBBXN0YZ2HTF3LKK"; //Secret key
         $vnp_Url = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
@@ -77,7 +78,7 @@ class PaymentController extends Controller
 
         $vnp_Url = $vnp_Url . "?" . $query;
         if (isset($vnp_HashSecret)) {
-            $vnpSecureHash = hash_hmac('sha512', $hashdata, $vnp_HashSecret);//
+$vnpSecureHash = hash_hmac('sha512', $hashdata, $vnp_HashSecret);//
             $vnp_Url .= 'vnp_SecureHash=' . $vnpSecureHash;
         }
         return redirect($vnp_Url);

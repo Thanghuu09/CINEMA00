@@ -48,7 +48,7 @@ class EventController extends Controller
                 ]
             );
         }else{
-            return redirect('admin/events')->with('warning','Vui lòng nhập hình ảnh'); //sửa
+            return redirect('admin/events')->with('warning','Vui lòng nhập hình ảnh');
         }
         $event->save();
         return redirect('admin/events')->with('success', 'Added Successfully!');

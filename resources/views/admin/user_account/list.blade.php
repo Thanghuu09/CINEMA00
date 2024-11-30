@@ -18,7 +18,7 @@
                                 <table class="table align-items-center mb-0 ">
                                     <thead>
                                     <tr>
-                                        <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.code')</th>
+                                        <!-- <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.code')</th> -->
                                         <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.fullname')</th>
                                         <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">Email</th>
                                         <th class="text-uppercase text-secondary text-center text-xxs font-weight-bolder opacity-7">@lang('lang.phone')</th>
@@ -36,9 +36,9 @@
                                         @foreach($value['roles'] as $role)
                                             @if($role['name'] == 'user')
                                                 <tr>
-                                                    <td class="align-middle text-center">
+                                                    <!-- <td class="align-middle text-center">
                                                         <h6 class="mb-0 text-sm ">{!! $value['code'] !!}</h6>
-                                                    </td>
+                                                    </td> -->
                                                     <td class="align-middle text-center">
                                                         <h6 class="mb-0 text-sm ">{!! $value['fullName'] !!}</h6>
                                                     </td>

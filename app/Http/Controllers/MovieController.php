@@ -140,13 +140,17 @@ class MovieController extends Controller
         return response()->json(['success' => 'Xóa thành công!']);
     }
 
-    public function status(Request $request)
+    public function destroy($id)
     {
-        $movie = Movie::find($request->movie_id);
-        $movie['status'] = $request->active;
-        $movie->save();
-        return response('success',200);
+        try {
+            $movie = Movie::findOrFail($id);  // Kiểm tra nếu không tìm thấy
+            $movie->delete();
+            return response()->json(['message' => 'Movie deleted successfully'], 200);  // Đảm bảo trả về phản hồi JSON
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Failed to delete movie', 'message' => $e->getMessage()], 500);
+        }
     }
+
     public function searchMovie(Request $request){
             $output = '';
             if($request->search == null){
@@ -229,6 +233,6 @@ class MovieController extends Controller
                 }
             }
             return Response($output);
-
+        
     }
 }

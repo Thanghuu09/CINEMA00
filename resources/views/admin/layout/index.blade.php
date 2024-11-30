@@ -24,8 +24,8 @@
     <link href="/web_assets/fonts/fontawesome/css/all.css" rel="stylesheet" />
     <link href="admin_assets/css/nucleo-svg.css" rel="stylesheet" />
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- CSS Files -->
     <link id="pagestyle" href="admin_assets/css/argon-dashboard.css" rel="stylesheet" />
     {{--Select2--}}
@@ -212,5 +212,4 @@
     @yield('scripts')
 
 </body>
-
 </html>

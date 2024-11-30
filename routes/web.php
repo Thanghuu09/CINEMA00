@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\WebController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,3 +87,5 @@ Route::post('/signUp', [AuthController::class, 'signUp']);
 Route::post('/signin', [AuthController::class, 'signIn']);
 
 Route::get('/', [WebController::class, 'home']);
+
+Route::delete('/admin/movie/delete/{id}', [MovieController::class, 'destroy']);

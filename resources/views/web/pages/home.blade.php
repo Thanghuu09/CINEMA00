@@ -26,22 +26,86 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
-
     <!--end slider -->
 
+    <style>
+        
+    </style>
+    
     <!-- Main content -->
     <div class="mt-5" id="mainContent">
+            <div class="home-movie-selection">
+                <div class="home-title">
+                    <h5 class="page-heading">Movie Selection</h5>
+                </div>
+            </div>
         <ul class="nav nav-tabs">
+            
             <li class="nav-item">
                 <a class="h5 nav-link active" href="#phimmoi" aria-controls="phimmoi" aria-expanded="true" data-bs-toggle="collapse" data-bs-target="#phimmoi">
                     @lang('lang.new_film')
                 </a>
-            </li>
+            </li>   
             <li class="nav-item">
-                <a class="h5 nav-link link-secondary" href="#vebantruoc" aria-controls="vebantruoc" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#vebantruoc">@lang('lang.pre_sale')</a>
+                <a class="h5 nav-link" href="#vebantruoc" aria-controls="vebantruoc" aria-expanded="false" data-bs-toggle="collapse" data-bs-target="#vebantruoc">@lang('lang.pre_sale')</a>
             </li>
         </ul>
+        
+        <style>
+            #mainContent .nav-tabs .nav-item .nav-link {
+            border: none; /* Xóa tất cả viền mặc định */
+            border-bottom: 3px solid transparent; /* Viền dưới trong suốt để khi chuyển lớp active không ảnh hưởng */
+            color: #000; /* Màu chữ */
+            transition: border-color 0.3s ease; /* Hiệu ứng chuyển đổi */
+        }
+
+        #mainContent .nav-tabs .nav-item .nav-link.active {
+            border: none; /* Xóa tất cả viền mặc định cho tab đang chọn */
+            border-bottom: 3px solid #ff0000; /* Đặt viền dưới màu đỏ cho tab đang chọn */
+            color: #ff0000; /* Màu chữ của tab đang chọn */
+        } 
+        .home-title {
+            background: url('/images/favicon/bg_h3_line.jpg') repeat-x center;
+            height: 60px;
+            text-align: center;
+            width: 100%;
+        }
+        .home-movie-selection .home-title h5{
+            height: 60px;
+            background: url('../images/favicon/movie_selection.png') no-repeat scroll center center / 406px 41px #FDFCF0;
+            display: inline-block;
+            width: 425px;
+            text-indent: -9999px; /* Ẩn chữ "latest_news" */
+        }
+
+        .home-events .home-title h5{
+            height: 60px;
+            background: url('../images/favicon/news.png') no-repeat scroll center center / 152px 51px #FDFCF0;
+            display: inline-block;
+            width: 18%;
+            text-indent: -9999px; /* Ẩn chữ "latest_news" */
+        }
+        
+        
+        </style>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+            const newFilmTab = document.querySelector('a[href="#phimmoi"]');
+            const preSaleTab = document.querySelector('a[href="#vebantruoc"]');
+            // Khi nhấp vào "Vé bán trước"
+            preSaleTab.addEventListener("click", function() {
+                preSaleTab.classList.add("active"); // Thêm viền dưới cho "Vé bán trước"
+                newFilmTab.classList.remove("active"); // Bỏ active từ "Phim mới"
+            });
+            // Khi nhấp vào "Phim mới"
+            newFilmTab.addEventListener("click", function() {
+                newFilmTab.classList.add("active"); // Thêm lớp active cho "Phim mới"
+                preSaleTab.classList.remove("active"); // Bỏ active từ "Vé bán trước"
+            });                    
+        });
+        </script>
+
 
         <div id="vebantruoc" class="row g-4 mt-2 row-cols-1 row-cols-md-2 collapse" data-bs-parent="#mainContent">
             @foreach($moviesEarly as $movie)
@@ -159,9 +223,12 @@
             <a href="/movies" class="btn btn-outline-warning w-auto">@lang('lang.more') ></a>
         </div>
 
-        <div class="mt-5">
             @if($news->count() > 0)
-            <h5 class="page-heading">@lang('lang.latest_news')</h5>
+            <div class="home-events">   
+                <div class="home-title">
+                    <h5 class="page-heading">@lang('lang.latest_news')</h5>
+                </div>
+            </div>
             @endif
             <div class="row mt-2 g-2 row-cols-1 row-cols-sm-2 row-cols-md-3 justify-content-start">
                 {{-- Post item  --}}
@@ -205,9 +272,44 @@
             data-width=""
             data-height="">
             </div> -->
+                  
+            <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+            <df-messenger
+            chat-icon="/images/icon/chatbot.png"
+            intent="WELCOME"
+            chat-title="TQCinema"
+            agent-id="2b371611-321d-486f-a5c6-eb3e9cbcbf24"
+            language-code="vi"       
+            ></df-messenger>
+            <style>
+                df-messenger {
+                    --df-messenger-bot-message: #e0f7fa; /* Màu nền cho tin nhắn bot */
+                    --df-messenger-user-message: #00BFFF; /* Màu nền cho tin nhắn người dùng */
+                    --df-messenger-button-titlebar-color: #00796b; /* Màu thanh tiêu đề */
+                    --df-messenger-font-color: #37474f; /* Màu chữ tổng thể */
+                    --df-messenger-send-icon: #00796b; /* Màu icon gửi tin nhắn */
+                    --df-messenger-input-box-color: #ffffff; /* Màu nền khung nhập */
+                    --df-messenger-chat-background-color: #f1f8e9; /* Màu nền khung chat */
+                }
+        
+            </style>
+            <script>
+            //     const dfMessenger = document.querySelector('df-messenger');
+            // dfMessenger.addEventListener('df-messenger-loaded', function () {
+            //     // Handle event
+            //     let dfIcon = dfMessenger?.shadowRoot?.querySelector("#widgetIcon");
+            //     if(dfIcon) {
+            //         dfIcon.style.bottom = "60px";
+            //     }
+            // });
 
-        </div>
-
+            window.addEventListener('dfMessengerLoaded', function () {
+                const dfMessenger = document.querySelector('df-messenger');
+                dfMessenger.renderCustomText('Chào mừng bạn đến với TQCinema! Tôi có thể giúp gì cho bạn?');
+                dfMessenger.showMinChat();
+                });
+                
+            </script>   
     </div>
 </section>
 

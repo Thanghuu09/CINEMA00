@@ -93,7 +93,7 @@ active
                             <img class="img-fluid rounded-start" style="max-width: 300px" src="{{ $post->image }}" alt=""> 
                             @endif
                         </a> -->
-                        <!-- cần sửa -->
+
                     </div>
                 </div>
             </div>

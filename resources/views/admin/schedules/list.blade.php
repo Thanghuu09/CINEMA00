@@ -141,7 +141,7 @@ padding-left: 5px;
                                                 <tr>
                                                     <td>
                                                         <button class="btn btn-info btn_add" data-bs-toggle="modal" data-bs-target="#CreateScheduleModal_{{ $room->id }}">
-                                                            <i class="fa-regular fa-circle-plus"></i> @lang('lang.add')
+                                                            <i class="fa fa-circle-plus"></i> @lang('lang.add')
                                                         </button>
                                                     </td>
                                                     <td colspan="3">
@@ -151,7 +151,7 @@ padding-left: 5px;
                                                                 <i class="fa-solid fa-repeat"></i> @lang('lang.change_all')
                                                             </button>
                                                             <a href="javascript:void(0);" data-date="{{$date_cur}}" data-theater="{{$theater_cur->id}}" data-room="{{$room->id}}" data-url="{{ url('admin/schedule/deleteall') }}" class="btn btn-dark ms-3 delete_all">
-                                                                <i class="fa-regular fa-trash"></i> @lang('lang.delete_all')
+                                                                <i class="fa fa-trash"></i> @lang('lang.delete_all')
                                                             </a>
                                                         </div>
                                                     </td>

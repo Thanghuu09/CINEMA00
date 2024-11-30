@@ -35,7 +35,9 @@
 
     <style>
         .scroll-to-top {
-            display: none; /* Ẩn nút cuộn lên mặc định */
+            display: none; 
+            position: fixed;
+            bottom: 80px;
         }
 
         @yield('css')
@@ -91,20 +93,6 @@
     @include('web.common.login')
 
 
-    <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/67247dd74304e3196adbab03/1ibj8n57p';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-
     /* <!-- Zalo -->
 
     <script src="https://sp.zalo.me/plugins/sdk.js"></script> */
@@ -130,8 +118,10 @@ s0.parentNode.insertBefore(s1,s0);
     @yield('js')
 
     <!-- Nút cuộn lên -->
-    <button onclick="scrollToTop()" class="btn btn-outline-warning position-fixed bottom-0 end-0 m-3 scroll-to-top" id="scrollBtn">
-        <i class="fas fa-arrow-up"></i>
+    <button onclick="scrollToTop()" 
+        class="btn btn-outline-warning position-fixed bottom-50px end-0 m-3 scroll-to-top" 
+        id="scrollBtn">
+    <i class="fas fa-arrow-up"></i>
     </button>
     
     <script>

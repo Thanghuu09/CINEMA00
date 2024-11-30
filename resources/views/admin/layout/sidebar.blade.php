@@ -82,14 +82,6 @@
                             <a class="nav-link" href="./admin/buyTicket">Bán vé</a>
                         </li>
                         @endcan
-                        @can('food')
-                        <li class="nav-item">
-                            <a class="nav-link" href="./admin/food">Thức ăn</a>
-                        </li>                     
-                        <li class="nav-item">
-                            <a class="nav-link" href="./admin/combo">Combo</a>
-                        </li>
-                        @endcan
                         @can('buyCombo')
                         <li class="nav-item">
                             <a class="nav-link" href="./admin/buyCombo">Bán combo</a>
@@ -105,7 +97,7 @@
                     <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
                         <i class="fa-solid fa-receipt text-danger text-sm opacity-10"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Quản lý Đơn Hàng</span>
+                    <span class="nav-link-text ms-1">Quản lý Xác thực</span>
                 </a>
                 <div class="collapse show" id="orderManagement">
                     <ul class="navbar-nav ms-4">
@@ -138,6 +130,14 @@
                 </a>
                 <div class="collapse show" id="ticketPriceManagement">
                     <ul class="navbar-nav ms-4">
+                        @can('food')
+                        <li class="nav-item">
+                            <a class="nav-link" href="./admin/food">Thức ăn</a>
+                        </li>                     
+                        <li class="nav-item">
+                            <a class="nav-link" href="./admin/combo">Combo</a>
+                        </li>
+                        @endcan
                         @can('price')
                         <li class="nav-item">
                             <a class="nav-link" href="./admin/prices">Giá vé</a>
@@ -212,7 +212,7 @@
             <li class="nav-item">
                 <a class="nav-link @yield('active')" href="./admin/info">
                     <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fa-sharp fa-regular text-info text-sm  fa-circle-info"></i>
+                        <i class="fa-sharp fa text-info text-sm  fa-circle-info"></i>
                     </div>
                     <span class="nav-link-text ms-1">@lang('lang.information')</span>
                 </a>

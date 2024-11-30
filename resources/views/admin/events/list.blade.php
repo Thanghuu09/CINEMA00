@@ -88,6 +88,9 @@
                                     </tbody>
                                 </table>
                             </div>
+                            <div id="paginate" class="d-flex justify-content-center mt-3">
+                                {!! $post->links() !!}
+                            </div>
                         </div>
                     </div>
                 </div>

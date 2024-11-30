@@ -36,3 +36,19 @@ body {
 	border-radius: 100%;
 	border: 5px solid #fff;
 }
+
+.hover_movie:hover {
+	color: #f26b38 !important;
+  }
+  .score .star {
+	margin: 0 0px;
+	padding: 0;
+	font-size: 2.8rem;
+	color: #ff9800;
+	background-color: unset;
+	border: none;
+  }
+  
+  .score .star:hover {
+	cursor: pointer;
+  }
